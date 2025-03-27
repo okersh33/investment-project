@@ -37,8 +37,8 @@ export const Home = () => {
 
   const investmentsByFund = investments.reduce<Record<string, number>>(
     (acc, inv) => {
-      if (!acc[inv.fund.id]) acc[inv.fund.id] = 0;
-      acc[inv.fund.id] += inv.amount;
+      if (!acc[inv.fund_id]) acc[inv.fund_id] = 0;
+      acc[inv.fund_id] += inv.amount;
       return acc;
     },
     {}

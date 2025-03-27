@@ -20,7 +20,7 @@ export type Fund = {
 export type Investment = {
   id: number;
   user_id: number;
-  fund: Fund;
+  fund_id: string;
   amount: number;
 };
 
@@ -31,7 +31,7 @@ export type TopFundInvestment = {
 
 export type CreateInvestmentRequest = {
   user_id: number;
-  fund: string;
+  fund_id: string;
   amount: number;
 };
 
