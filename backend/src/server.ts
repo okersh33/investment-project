@@ -78,12 +78,12 @@ router.post("/create-user", async (req: Request, res: Response) => {
 
 // Get all investments
 router.post("/investments", async (req: Request, res: Response) => {
-  const { user_id, fund, amount } = req.body as InvestmentRequest;
+  const { user_id, fund_id, amount } = req.body as InvestmentRequest;
 
-  if (!user_id || !fund || amount === undefined || amount <= 0) {
+  if (!user_id || !fund_id || amount === undefined || amount <= 0) {
     return res.status(400).json({
       message: "Missing or invalid fields",
-      error: "User ID, fund, and a positive amount are required",
+      error: "User ID, Fund ID, and a positive amount are required",
     });
   }
 
@@ -91,8 +91,8 @@ router.post("/investments", async (req: Request, res: Response) => {
     const db = await dbPromise;
 
     const result = await db.run(
-      `INSERT INTO investments (user_id, fund, amount) VALUES (?, ?, ?)`,
-      [user_id, fund, amount]
+      `INSERT INTO investments (user_id, fund_id, amount) VALUES (?, ?, ?)`,
+      [user_id, fund_id, amount]
     );
 
     const newInvestment = await db.get<InvestmentResponse>(

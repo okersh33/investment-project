@@ -11,13 +11,13 @@ export type UserResponse = {
 
 export interface InvestmentRequest {
   user_id: number;
-  fund: string;
+  fund_id: string;
   amount: number;
 }
 
 export interface InvestmentResponse {
   id: number;
   user_id: number;
-  fund: string;
+  fund_id: string;
   amount: number;
 }

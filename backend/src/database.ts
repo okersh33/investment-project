@@ -21,7 +21,7 @@ async function initializeDB() {
     CREATE TABLE IF NOT EXISTS investments (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       user_id INTEGER NOT NULL,
-      fund TEXT NOT NULL,
+      fund_id TEXT NOT NULL,
       amount REAL NOT NULL
     )
   `);
