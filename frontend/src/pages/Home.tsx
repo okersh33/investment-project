@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useUserAuth } from "../hooks/useUserAuth";
-import { getUserInvestments, funds } from "../services/api";
+import { getUserInvestments } from "../services/api";
 import { Investment, TopFundInvestment } from "../types/types";
 import { Sidebar } from "../components/Sidebar/Sidebar";
 import { Header } from "../components/Header/Header";
 import { TopFunds } from "../components/Widgets/TopFunds/TopFunds";
 import { InvestmentSummary } from "../components/Widgets/InvestmentSummary/InvestmentSummary";
 import { QuickActions } from "../components/Widgets/QuickActions/QuickActions";
+import { mockFunds } from "../services/mockData";
 
 export const Home = () => {
   const userAuth = useUserAuth();
@@ -48,7 +49,7 @@ export const Home = () => {
     .sort((a, b) => b[1] - a[1])
     .slice(0, 3)
     .map(([fundId, amount]) => ({
-      fund: funds.find((fund) => fund.id === fundId) || {
+      fund: mockFunds.find((fund) => fund.id === fundId) || {
         id: fundId,
         name: fundId,
         description: "",

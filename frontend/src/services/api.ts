@@ -60,34 +60,3 @@ export const createInvestment = (newInvestment: CreateInvestmentRequest) => {
     body: JSON.stringify(newInvestment),
   });
 };
-
-export const funds = [
-  {
-    id: "equities-fund",
-    name: "Equities Fund",
-    description: "A fund focused on equity investments in global markets",
-    risk: "High" as const,
-    category: "Equity",
-  },
-  {
-    id: "bond-fund",
-    name: "Bond Fund",
-    description: "A lower-risk fund focused on government and corporate bonds",
-    risk: "Low" as const,
-    category: "Fixed Income",
-  },
-  {
-    id: "balanced-fund",
-    name: "Balanced Fund",
-    description: "A diversified fund with a mix of equities and bonds",
-    risk: "Medium" as const,
-    category: "Mixed",
-  },
-  {
-    id: "property-fund",
-    name: "Property Fund",
-    description: "Investment in commercial and residential properties",
-    risk: "Medium" as const,
-    category: "Property",
-  },
-];

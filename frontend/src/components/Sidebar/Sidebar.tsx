@@ -41,7 +41,7 @@ export const Sidebar = () => {
         <div className="mt-auto">
           <button
             onClick={userAuth.logout}
-            className="w-full px-4 py-2 rounded-md text-teal-100 hover:bg-teal-800 text-left"
+            className="w-full px-4 py-2 rounded-md text-teal-100 hover:bg-teal-800 text-left cursor-pointer"
           >
             Sign out
           </button>
