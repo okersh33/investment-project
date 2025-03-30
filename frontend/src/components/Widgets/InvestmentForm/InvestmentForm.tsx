@@ -50,6 +50,7 @@ export const InvestmentForm: React.FC<InvestmentFormProps> = ({
           </label>
           <input
             id="amount"
+            aria-label="Amount"
             type="number"
             min="10"
             step="1"
@@ -82,6 +83,7 @@ export const InvestmentForm: React.FC<InvestmentFormProps> = ({
         <div className="pt-4">
           <Button
             type="submit"
+            aria-label="Complete investment"
             disabled={isSubmitting || !investmentAmount}
             isLoading={isSubmitting}
             fullWidth
