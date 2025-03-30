@@ -9,6 +9,7 @@ export const QuickActions = () => {
         <div className="grid grid-cols-3 gap-4">
           <Link
             to="/invest"
+            aria-label="new-investment"
             className="border rounded-lg p-4 hover:bg-gray-50 flex flex-col items-center text-center"
           >
             <FiPlus className="h-8 w-8 text-teal-500 mb-2" />
@@ -18,6 +19,7 @@ export const QuickActions = () => {
 
           <Link
             to="/portfolio"
+            aria-label="view-portfolio"
             className="border rounded-lg p-4 hover:bg-gray-50 flex flex-col items-center text-center"
           >
             <FiBarChart2 className="h-8 w-8 text-teal-500 mb-2" />
@@ -27,6 +29,7 @@ export const QuickActions = () => {
 
           <Link
             to="/settings"
+            aria-label="settings"
             className="border rounded-lg p-4 hover:bg-gray-50 flex flex-col items-center text-center"
           >
             <FiSettings className="h-8 w-8 text-teal-500 mb-2" />
