@@ -4,10 +4,10 @@ import { getUserInvestments } from "../services/api";
 import { Investment, TopFundInvestment } from "../types/types";
 import { Sidebar } from "../components/Sidebar/Sidebar";
 import { Header } from "../components/Header/Header";
-import { TopFunds } from "../components/Widgets/TopFunds/TopFunds";
 import { InvestmentSummary } from "../components/Widgets/InvestmentSummary/InvestmentSummary";
 import { QuickActions } from "../components/Widgets/QuickActions/QuickActions";
 import { mockFunds } from "../services/mockData";
+import { TopInvestments } from "../components/Widgets/TopInvestments/TopInvestments";
 
 export const Home = () => {
   const userAuth = useUserAuth();
@@ -83,7 +83,7 @@ export const Home = () => {
                   userName={userAuth.user?.name ?? ""}
                   totalInvested={totalInvested}
                 />
-                <TopFunds topFunds={topFunds} />
+                <TopInvestments topFunds={topFunds} />
                 <QuickActions />
               </>
             )}

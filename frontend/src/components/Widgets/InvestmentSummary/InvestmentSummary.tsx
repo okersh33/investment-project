@@ -1,9 +1,9 @@
-interface Props {
+interface InvestmentSummaryProps {
   userName: string;
   totalInvested: number;
 }
 
-export const InvestmentSummary: React.FC<Props> = ({
+export const InvestmentSummary: React.FC<InvestmentSummaryProps> = ({
   userName,
   totalInvested,
 }) => {
@@ -19,11 +19,7 @@ export const InvestmentSummary: React.FC<Props> = ({
         <div className="flex justify-between items-center">
           <span className="text-gray-600">Total Invested</span>
           <span className="text-2xl font-bold text-teal-600">
-            £
-            {totalInvested.toLocaleString("en-GB", {
-              minimumFractionDigits: 2,
-              maximumFractionDigits: 2,
-            })}
+            £{totalInvested.toLocaleString()}
           </span>
         </div>
       </div>

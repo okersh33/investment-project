@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { TopFundInvestment } from "../../../types/types";
+import { riskColors, TopFundInvestment } from "../../../types/types";
 
-interface Props {
+interface TopInvestmentsProps {
   topFunds: TopFundInvestment[];
 }
 
-export const TopFunds: React.FC<Props> = ({ topFunds }) => {
+export const TopInvestments: React.FC<TopInvestmentsProps> = ({ topFunds }) => {
   return (
     <div className="bg-white rounded-lg shadow mb-8">
       <div className="p-6">
@@ -24,11 +24,7 @@ export const TopFunds: React.FC<Props> = ({ topFunds }) => {
                   <h3 className="font-semibold text-lg">{fund.name}</h3>
                   <div
                     className={`px-2 py-1 rounded text-xs font-medium ${
-                      fund.risk === "Low"
-                        ? "bg-green-100 text-green-800"
-                        : fund.risk === "Medium"
-                          ? "bg-yellow-100 text-yellow-800"
-                          : "bg-red-100 text-red-800"
+                      riskColors[fund.risk]
                     }`}
                   >
                     {fund.risk} Risk
@@ -38,11 +34,7 @@ export const TopFunds: React.FC<Props> = ({ topFunds }) => {
                 <div className="flex justify-between items-center">
                   <span className="text-gray-600">{fund.category}</span>
                   <span className="font-bold text-teal-600">
-                    £
-                    {amount.toLocaleString("en-GB", {
-                      minimumFractionDigits: 2,
-                      maximumFractionDigits: 2,
-                    })}
+                    £{amount.toLocaleString()}
                   </span>
                 </div>
               </div>
