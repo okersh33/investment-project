@@ -3,6 +3,7 @@ import { useUserAuth } from "./hooks/useUserAuth";
 import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
 import { Login } from "./pages/Login";
 import { Home } from "./pages/Home";
+import { Invest } from "./pages/Invest";
 
 export const App = () => {
   const userAuth = useUserAuth();
@@ -19,6 +20,14 @@ export const App = () => {
           element={
             <ProtectedRoute>
               <Home />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/invest"
+          element={
+            <ProtectedRoute>
+              <Invest />
             </ProtectedRoute>
           }
         />
