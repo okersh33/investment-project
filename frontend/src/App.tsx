@@ -4,6 +4,7 @@ import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
 import { Login } from "./pages/Login";
 import { Home } from "./pages/Home";
 import { Invest } from "./pages/Invest";
+import { ComingSoon } from "./pages/ComingSoon";
 
 export const App = () => {
   const userAuth = useUserAuth();
@@ -28,6 +29,22 @@ export const App = () => {
           element={
             <ProtectedRoute>
               <Invest />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/portfolio"
+          element={
+            <ProtectedRoute>
+              <ComingSoon page="Portfolio" />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/settings"
+          element={
+            <ProtectedRoute>
+              <ComingSoon page="Settings" />
             </ProtectedRoute>
           }
         />
