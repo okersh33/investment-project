@@ -3,7 +3,7 @@ import "@testing-library/jest-dom";
 import { BrowserRouter } from "react-router-dom";
 import { QuickActions } from "./QuickActions";
 
-describe("QuickActions Component", () => {
+describe("QuickActions Widget", () => {
   const renderComponent = () =>
     render(
       <BrowserRouter>

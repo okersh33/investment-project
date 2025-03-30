@@ -20,7 +20,7 @@ const testFunds: Fund[] = [
   },
 ];
 
-describe("FundList Component", () => {
+describe("FundList Widget", () => {
   const testProps = {
     funds: testFunds,
     isLoading: false,

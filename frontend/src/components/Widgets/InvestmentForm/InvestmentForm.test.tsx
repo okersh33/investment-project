@@ -3,7 +3,7 @@ import "@testing-library/jest-dom";
 import { InvestmentForm } from "./InvestmentForm";
 import { Fund } from "../../../types/types";
 
-describe("InvestmentForm Component", () => {
+describe("InvestmentForm Widget", () => {
   const mockFund: Fund = {
     id: "1",
     name: "High Risk Test Fund",

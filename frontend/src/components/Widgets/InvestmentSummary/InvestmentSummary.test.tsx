@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { InvestmentSummary } from "./InvestmentSummary";
 
-describe("InvestmentSummary Component", () => {
+describe("InvestmentSummary Widget", () => {
   test("renders the component without crashing", () => {
     render(
       <InvestmentSummary userName="Vincent Van Gogh" totalInvested={3333} />
