@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useUserAuth } from "../../hooks/useUserAuth";
 
 export const Sidebar = () => {
   const userAuth = useUserAuth();
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   return (
     <aside className="bg-teal-700 w-64 min-h-screen flex-shrink-0 sticky top-0">
@@ -14,25 +16,41 @@ export const Sidebar = () => {
         <nav className="space-y-2 flex-grow">
           <Link
             to="/"
-            className="block px-4 py-2 rounded-md text-white bg-teal-800 font-medium"
+            className={`block px-4 py-2 rounded-md ${
+              currentPath === "/"
+                ? "text-white bg-teal-800 font-medium"
+                : "text-teal-100 hover:bg-teal-800"
+            }`}
           >
             Dashboard
           </Link>
           <Link
             to="/invest"
-            className="block px-4 py-2 rounded-md text-teal-100 hover:bg-teal-800"
+            className={`block px-4 py-2 rounded-md ${
+              currentPath === "/invest"
+                ? "text-white bg-teal-800 font-medium"
+                : "text-teal-100 hover:bg-teal-800"
+            }`}
           >
             Invest
           </Link>
           <Link
             to="/portfolio"
-            className="block px-4 py-2 rounded-md text-teal-100 hover:bg-teal-800"
+            className={`block px-4 py-2 rounded-md ${
+              currentPath === "/portfolio"
+                ? "text-white bg-teal-800 font-medium"
+                : "text-teal-100 hover:bg-teal-800"
+            }`}
           >
             Portfolio
           </Link>
           <Link
             to="/settings"
-            className="block px-4 py-2 rounded-md text-teal-100 hover:bg-teal-800"
+            className={`block px-4 py-2 rounded-md ${
+              currentPath === "/settings"
+                ? "text-white bg-teal-800 font-medium"
+                : "text-teal-100 hover:bg-teal-800"
+            }`}
           >
             Settings
           </Link>
